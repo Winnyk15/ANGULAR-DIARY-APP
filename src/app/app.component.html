@@ -1,4 +1,10 @@
 <div>
   <h1>My Diary</h1>
-  <p>My thought for the day is {{ Diary }}</p>
+  <ul>
+      <li *ngFor='let Diary of Diaries'>
+        {{Diary.name}}
+      </li>
+  </ul>
+  <p *ngIf='Diaries.length > 5'>Your diaries are too many</p>
+  <app-diary></app-diary>
 </div>

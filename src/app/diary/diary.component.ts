@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
-import { Diary } from './diary'
+import { Component, OnInit } from '@angular/core';
+import { Diary } from '../diary';
+
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-diary',
+  templateUrl: './diary.component.html',
+  styleUrls: ['./diary.component.css']
 })
-export class AppComponent {
+export class DiaryComponent implements OnInit {
+
   Diaries:Diary[] = [
     {id:1, name:'Beautiful sunsets need cloudy skies',description:'Suffering comes first before success'},
     {id:2,name:'Positive anything is better than negative nothing',description:'It is better to be positive at doing small things than staying negative and being dormant'},
@@ -15,5 +17,10 @@ export class AppComponent {
     {id:5,name:'Do not call it a dream but a plan',description:'Do not let it remain a dream but rather make a plan and reach the goal'},
     {id:6,name:'Making mistakes is better than faking perfection',description:'Learning from mistakes is better than pretending you are aware of something'},
   ];
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
 
 }
